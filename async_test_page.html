@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async Loading Test</title>
+</head>
+<body>
+    <h1>Order Dashboard</h1>
+
+    <p id="status">Order status: Pending</p>
+
+    <p id="loading">Loading order actions...</p>
+
+    <script>
+        setTimeout(() => {
+            const button = document.createElement("button");
+
+            button.id = "confirm-order-updated";
+            button.textContent = "Confirm Order";
+
+            button.onclick = () => {
+                document.getElementById("status").textContent =
+                    "Order status: Confirmed";
+            };
+
+            document.body.appendChild(button);
+            document.getElementById("loading").remove();
+
+        }, 2000);
+    </script>
+</body>
+</html>
